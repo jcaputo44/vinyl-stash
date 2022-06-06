@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import AddAlbumPage from '../AddAlbumPage/AddAlbumPage';
 import MyCollectionPage from '../MyCollectionPage/MyCollectionPage';
+import AlbumDetailsPage from '../AlbumDetailsPage/AlbumDetailsPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -19,7 +20,7 @@ function App() {
               {/* Route components in here */}
               <Route path="/collection/add" element={<AddAlbumPage />} />
               <Route path="/collection" element={<MyCollectionPage />} />
-              {/* <Route path="/details" element={<AlbumDetailsPage />} /> */}
+              <Route path="/collection/details" element={<AlbumDetailsPage />} />
               <Route path="/*" element={<Navigate to="/collection" /> } />
             </Routes>
           </>

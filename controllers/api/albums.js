@@ -6,7 +6,6 @@ module.exports = {
 }
 
 async function search(req, res) {
-    console.log('nirvana rocks');
-    const albums = await fetch(`https://api.discogs.com/database/search?q=${req.query}&key=${process.env.API_KEY}&secret=${process.env.API_SECRET}`).then((res) => res.json());
+    const albums = await fetch(`https://api.discogs.com/database/search?q=${req.body.query}&type=title&key=${process.env.API_KEY}&secret=${process.env.API_SECRET}`).then((res) => res.json());
     res.json(albums.results);
 }
