@@ -1,0 +1,11 @@
+.ColGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 90vh;
+    margin: 2rem;
+    gap: 4vmin;
+    /* grid-template-columns: 32vmin 32vmin 32vmin 32vmin 32vmin;
+    grid-template-rows:  32vmin 32vmin 32vmin 32vmin 32vmin; */
+    /* list-style: none; */
+}
