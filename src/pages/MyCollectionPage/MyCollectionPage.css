@@ -2,9 +2,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: 90vh;
+    height: 100%;
     margin: 2rem;
     gap: 4vmin;
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 15px;
     /* grid-template-columns: 32vmin 32vmin 32vmin 32vmin 32vmin;
     grid-template-rows:  32vmin 32vmin 32vmin 32vmin 32vmin; */
     /* list-style: none; */

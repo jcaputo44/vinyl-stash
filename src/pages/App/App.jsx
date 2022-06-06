@@ -19,6 +19,7 @@ function App() {
               {/* Route components in here */}
               <Route path="/collection/add" element={<AddAlbumPage />} />
               <Route path="/collection" element={<MyCollectionPage />} />
+              {/* <Route path="/details" element={<AlbumDetailsPage />} /> */}
               <Route path="/*" element={<Navigate to="/collection" /> } />
             </Routes>
           </>
