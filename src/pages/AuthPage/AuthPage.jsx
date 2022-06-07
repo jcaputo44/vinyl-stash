@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './AuthPage.css'
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
@@ -6,8 +7,9 @@ export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
     <main>
-      <h1 className="page-title">Vinyl Stash</h1>
-      <br />
+      <img src="https://i.imgur.com/HxPUVsp.png" alt="vinyl-stash" className="vslogo"/>
+      {/* <h1 className="page-title">Vinyl Stash</h1> */}
+      {/* <br /> */}
         <div className="flex-ctr-ctr">
         { showSignUp ?
             <LoginForm setUser={setUser} />

@@ -1,24 +1,20 @@
-import searchedAlbums from '../../pages/AddAlbumPage/AddAlbumPage';
-import { useState } from 'react';
-import './AlbumCard.css'
+// import searchedAlbums from '../../pages/AddAlbumPage/AddAlbumPage';
+// import { useState } from 'react';
+// import './AlbumCard.css'
 
-export default function AlbumCard({album}) {
-    const [collection, setCollection] = useState('');
-    async function addTo() {
-        const collection = await /////////////
-        setCollection(collection);
-        console.log(collection);
-      }
-      const newCollection = [];
-      const newCol = collection && collection.filter(element => {
-        const isDuplicate = newCollection.includes(element.title);
-        
-        if(!isDuplicate) {
-          newCollection.push(element.title);
-          return true;
+export default function AlbumCard({album, addTo}) {
+    function addAlbum(album) {
+        const albumObj = {
+            cover_image: album.cover_image,
+            title: album.title,
+            artist: album.artist,
+            year: album.year,
+            label: album.label.map(label => label),
+            genre: album.genre.map(genre => genre),
+            API_ID: album.id
         }
-        return false;
-      });
+        addTo(albumObj);
+    }  
 
     return(
         <div className="card-div">
@@ -26,7 +22,9 @@ export default function AlbumCard({album}) {
             <br />
             {album.title}
             <br />
-            <button onClick={addTo}>Add to Collection</button>
+            <br />
+            <button onClick={() => addAlbum(album)}>Add to Collection</button>
+            <br />
             <br />
             <br />
         </div>

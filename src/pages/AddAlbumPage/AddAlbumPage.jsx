@@ -3,13 +3,12 @@ import AlbumCard from '../../components/AlbumCard/AlbumCard'
 import * as albumsAPI from '../../utilities/albums-api';
 import './AddAlbumPage.css';
 
-export default function AddAlbumPage() {
+export default function AddAlbumPage({addTo, albums, setAlbums}) {
   const [query, setQuery] = useState('');
-  const [albums, setAlbums] = useState('');
   async function searchAlbums() {
-    const albums = await albumsAPI.search(query)
-    setAlbums(albums);
-    console.log(albums);
+    const albumSearch = await albumsAPI.search(query)
+    setAlbums(albumSearch);
+    console.log(albumSearch);
   }
   const uniqueAlbums = [];
   const unique = albums && albums.filter(element => {
@@ -18,12 +17,11 @@ export default function AddAlbumPage() {
     if(!isDuplicate) {
       uniqueAlbums.push(element.title);
       return true;
-    }
+    } 
     return false;
   });
-  const searchedAlbums = unique && unique.map((album) => <AlbumCard album={album}/>);
+  const searchedAlbums = unique && unique.map((album, idx) => <AlbumCard key={idx} album={album} addTo={addTo}/>);
   // const searchedAlbums = unique && unique.map((a) => <img key={a.title} src={a.cover_image} alt="oops"></img>);
-  console.log(unique);
 
   return (
     <>

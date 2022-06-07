@@ -1,0 +1,9 @@
+.VSL {
+    height: 90px;
+}
+
+.nav-bar {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}

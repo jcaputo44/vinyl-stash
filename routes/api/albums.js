@@ -6,5 +6,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // POST /api/users/login
 router.post('/', albumsCtrl.search);
+router.post('/add', albumsCtrl.addAlbum);
 
 module.exports = router;

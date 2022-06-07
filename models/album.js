@@ -6,8 +6,10 @@ const albumSchema = new Schema({
     title: {type: String},
     artist: {type: String},
     year: {type: String},
-    label: {type: String},
-    genre: {type: String},
+    label: [{type: String}],
+    genre: [{type: String}],
+    API_ID: {type:String},
+    user: [{type: Schema.Types.ObjectId, ref: "User"}]
 },{
    timestamps: true 
 });
