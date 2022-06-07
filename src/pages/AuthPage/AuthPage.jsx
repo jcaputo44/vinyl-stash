@@ -6,7 +6,7 @@ export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
     <main>
-      <h1>Vinyl Stash</h1>
+      <h1 className="page-title">Vinyl Stash</h1>
       <br />
         <div className="flex-ctr-ctr">
         { showSignUp ?
