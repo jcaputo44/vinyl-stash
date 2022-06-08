@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import * as albumsAPI from '../../utilities/albums-api';
@@ -12,12 +12,19 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(getUser());
   const [albums, setAlbums] = useState('');
-  const [collection, setCollection] = useState('');
-    async function addTo(album) {
-        const collection = await albumsAPI.addAlbum(album)
-        // setCollection(collection);
-        console.log(collection);
+  const [collection, setCollection] = useState([]);
+    async function addTo(albumObj) {
+        const album = await albumsAPI.addAlbum(albumObj)
+        setCollection([...collection, album]);
+      } 
+    useEffect(function() {
+      async function showCollection() {
+        const newCollection = await albumsAPI.getCollection()
+        setCollection(newCollection)
       }
+      showCollection()
+    },[]) 
+    
   return (
     <main className="App">
         { user ?
@@ -26,7 +33,7 @@ function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/collection/add" element={<AddAlbumPage albums ={albums} setAlbums={setAlbums} addTo={addTo}/>} />
-              <Route path="/collection" element={<MyCollectionPage />} />
+              <Route path="/collection" element={<MyCollectionPage collection={collection} />} />
               <Route path="/collection/details" element={<AlbumDetailsPage />} />
               <Route path="/*" element={<Navigate to="/collection" /> } />
             </Routes>

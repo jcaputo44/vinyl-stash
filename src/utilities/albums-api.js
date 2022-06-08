@@ -9,3 +9,7 @@ export function search(query) {
 export function addAlbum(album) {
   return sendRequest(`${BASE_URL}/add`, 'POST', album);
 }
+
+export function getCollection(collection) {
+  return sendRequest(BASE_URL)
+}

@@ -8,8 +8,9 @@ module.exports = {
     getCollection
 }
 
-async function getCollection() {
+async function getCollection(req, res) {
     const albums = await Album.find({user:req.user._id})
+    res.json(albums)
 }
 
 async function search(req, res) {
