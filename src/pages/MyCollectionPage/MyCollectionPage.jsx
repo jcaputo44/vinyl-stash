@@ -2,7 +2,7 @@
 import CollCard from '../../components/CollCard/CollCard';
 import './MyCollectionPage.css';
 
-export default function MyCollectionPage({collection, albums}) {
+export default function MyCollectionPage({collection}) {
   const collectionList = collection.map((album, idx) => <CollCard key={idx} album={album}/>);
   return (
     <>

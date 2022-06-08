@@ -11,6 +11,7 @@ export default function AlbumCard({album, addTo}) {
             year: album.year,
             label: album.label.map(label => label),
             genre: album.genre.map(genre => genre),
+            style: album.style.map(style => style),
             API_ID: album.id
         }
         addTo(albumObj);

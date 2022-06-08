@@ -2,3 +2,17 @@
     font-family: 'Amaranth', sans-serif;
     color: rgb(105, 51, 44);
 }
+
+.albumCov {
+    margin-top: 2rem;
+    float: left;
+    width: 50%;
+}
+
+.albumDeets {
+    margin-top: 6rem;
+}
+
+.label {
+    font-weight: bold;
+}

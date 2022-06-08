@@ -11,12 +11,13 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState(getUser());
-  const [albums, setAlbums] = useState('');
+  const [albums, setAlbums] = useState([]);
   const [collection, setCollection] = useState([]);
     async function addTo(albumObj) {
         const album = await albumsAPI.addAlbum(albumObj)
         setCollection([...collection, album]);
       } 
+      console.log(collection)
     useEffect(function() {
       async function showCollection() {
         const newCollection = await albumsAPI.getCollection()
@@ -24,7 +25,6 @@ function App() {
       }
       showCollection()
     },[]) 
-    
   return (
     <main className="App">
         { user ?
@@ -32,9 +32,9 @@ function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/collection/add" element={<AddAlbumPage albums ={albums} setAlbums={setAlbums} addTo={addTo}/>} />
-              <Route path="/collection" element={<MyCollectionPage collection={collection} albums={albums}/>} />
-              <Route path="/collection/details/:title" element={<AlbumDetailsPage albums={albums} collection={collection} />} />
+              <Route path="/collection/add" element={<AddAlbumPage addTo={addTo} albums={albums} setAlbums={setAlbums}/>} />
+              <Route path="/collection" element={<MyCollectionPage collection={collection} setCollection={setCollection} />} />
+              <Route path="/collection/details/:id" element={<AlbumDetailsPage collection={collection} />} />
               <Route path="/*" element={<Navigate to="/collection" /> } />
             </Routes>
           </>
