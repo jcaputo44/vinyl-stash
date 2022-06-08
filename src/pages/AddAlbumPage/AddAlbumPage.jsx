@@ -10,7 +10,7 @@ export default function AddAlbumPage({addTo, albums, setAlbums}) {
     setAlbums(albumSearch);
   }
   const uniqueAlbums = [];
-  const unique = albums && albums.filter(element => {
+  const unique = albums.filter(element => {
     const isDuplicate = uniqueAlbums.includes(element.title);
     
     if(!isDuplicate) {
@@ -19,7 +19,7 @@ export default function AddAlbumPage({addTo, albums, setAlbums}) {
     } 
     return false;
   });
-  const searchedAlbums = unique && unique.map((album, idx) => <AlbumCard key={idx} album={album} addTo={addTo}/>);
+  const searchedAlbums = unique.map((album, idx) => <AlbumCard key={idx} album={album} addTo={addTo}/>);
   // const searchedAlbums = unique && unique.map((a) => <img key={a.title} src={a.cover_image} alt="oops"></img>);
 
   return (

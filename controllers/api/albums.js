@@ -14,7 +14,7 @@ async function getCollection(req, res) {
 }
 
 async function search(req, res) {
-    const albums = await fetch(`https://api.discogs.com/database/search?q=${req.body.query}&type=title&key=${process.env.API_KEY}&secret=${process.env.API_SECRET}`).then((res) => res.json());
+    const albums = await fetch(`https://api.discogs.com/database/search?q=${req.body.query}&type=release&key=${process.env.API_KEY}&secret=${process.env.API_SECRET}`).then((res) => res.json());
     res.json(albums.results);
 }
 
@@ -25,11 +25,12 @@ async function addAlbum(req,res) {
         let albumUser = album.user.includes(req.user._id)
         if (albumUser) return
         album.user.push(req.user._id)
-        album.save()
+        await album.save()
+        res.json(album)
     } else {
         req.body.user = req.user._id
         const newAlbum = new Album(req.body)
-        newAlbum.save()
-        console.log(newAlbum)
+        await newAlbum.save()
+        res.json(newAlbum)
     }
 }
