@@ -1,21 +1,15 @@
-.ColGrid {
-    display: flex;
-    flex-direction: row;
+.ColGrid2 {
+    /* display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100%;
+    margin: 2rem; */
+    /* height: 100%;
     margin: 2rem;
     gap: 4vmin;
-    border: 2px solid;
     border-radius: 15px;
     border-color: rgb(105, 51, 44);
-    padding: 15px;
+    padding: 15px; */
     /* grid-template-columns: 32vmin 32vmin 32vmin 32vmin 32vmin;
     grid-template-rows:  32vmin 32vmin 32vmin 32vmin 32vmin; */
-}
-
-
-.page-title {
-    font-family: 'Amaranth', sans-serif;
-    color: rgb(105, 51, 44);
+    /* list-style: none; */
 }

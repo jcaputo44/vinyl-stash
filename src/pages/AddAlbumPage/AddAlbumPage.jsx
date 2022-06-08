@@ -8,7 +8,6 @@ export default function AddAlbumPage({addTo, albums, setAlbums}) {
   async function searchAlbums() {
     const albumSearch = await albumsAPI.search(query)
     setAlbums(albumSearch);
-    console.log(albumSearch);
   }
   const uniqueAlbums = [];
   const unique = albums && albums.filter(element => {
@@ -32,7 +31,6 @@ export default function AddAlbumPage({addTo, albums, setAlbums}) {
       <div>showing results for: {query}</div>
       <br />
       <div>{searchedAlbums}</div>
-      {/* <div><AlbumCard /></div> */}
     </div>
     <br />
     </>

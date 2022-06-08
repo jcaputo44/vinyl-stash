@@ -33,8 +33,8 @@ function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/collection/add" element={<AddAlbumPage albums ={albums} setAlbums={setAlbums} addTo={addTo}/>} />
-              <Route path="/collection" element={<MyCollectionPage collection={collection} />} />
-              <Route path="/collection/details" element={<AlbumDetailsPage />} />
+              <Route path="/collection" element={<MyCollectionPage collection={collection} albums={albums}/>} />
+              <Route path="/collection/details/:title" element={<AlbumDetailsPage albums={albums} collection={collection} />} />
               <Route path="/*" element={<Navigate to="/collection" /> } />
             </Routes>
           </>

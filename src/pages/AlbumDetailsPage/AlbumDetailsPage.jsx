@@ -1,8 +1,14 @@
 import { useParams } from "react-router-dom";
-// import '/index.css'
+import './AlbumDetailsPage.css';
 
-export default function AlbumDetailsPage() {
+export default function AlbumDetailsPage({albums}) {
+    const {title} = useParams();
+    // const album = albums.find(a => a.title === title);
     return (
-        <h1 className="titleFont">album details</h1>
+        <>
+        <h1 className="titleFont">{title}</h1>
+        {/* <p>{album.year}</p> */}
+        <p>cool album dude</p>
+        </>
     );
 }
