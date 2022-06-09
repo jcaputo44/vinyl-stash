@@ -15,7 +15,7 @@ async function deleteAlbum(req, res) {
 }
 
 async function getCollection(req, res) {
-    const albums = await Album.find({user:req.user._id}).sort("-createdAt")
+    const albums = await Album.find({user:req.user._id}).sort("-createdAt");
     res.json(albums)
 }
 
