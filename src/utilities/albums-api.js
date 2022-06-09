@@ -12,3 +12,7 @@ export function addAlbum(album) {
 export function getCollection(collection) {
   return sendRequest(BASE_URL)
 }
+
+export function deleteAlbum(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+}

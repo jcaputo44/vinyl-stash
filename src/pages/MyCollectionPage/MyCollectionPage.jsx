@@ -11,6 +11,8 @@ export default function MyCollectionPage({collection}) {
       {/* <div><Link to={`details`}><img src="https://i.imgur.com/J3RGlSa.jpg" alt="darn" height="150px" /></Link></div> */}
       <div className="ColGrid">{collectionList}</div>
     </div>
+    <br />
+    <br />
     </>
   );
 }

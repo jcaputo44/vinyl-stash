@@ -21,7 +21,7 @@ function App() {
     navigate('/collection');
   } 
 
-    console.log(collection)
+    // console.log(collection)
   useEffect(function() {
     async function showCollection() {
       const newCollection = await albumsAPI.getCollection();
@@ -39,7 +39,7 @@ function App() {
               {/* Route components in here */}
               <Route path="/collection/add" element={<AddAlbumPage addTo={addTo} albums={albums} setAlbums={setAlbums}/>} />
               <Route path="/collection" element={<MyCollectionPage collection={collection} />} />
-              <Route path="/collection/details/:id" element={<AlbumDetailsPage collection={collection} />} />
+              <Route path="/collection/details/:id" element={<AlbumDetailsPage collection={collection} setCollection={setCollection}/>} />
               <Route path="/*" element={<Navigate to="/collection" /> } />
             </Routes>
           </>

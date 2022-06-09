@@ -5,11 +5,17 @@ const Album = require('../../models/album');
 module.exports = {
     search,
     addAlbum,
-    getCollection
+    getCollection,
+    deleteAlbum
+}
+
+async function deleteAlbum(req, res) {
+    const remove = await Album.findByIdAndDelete(req.params.id);
+    res.json(remove)
 }
 
 async function getCollection(req, res) {
-    const albums = await Album.find({user:req.user._id})
+    const albums = await Album.find({user:req.user._id}).sort("-createdAt")
     res.json(albums)
 }
 
@@ -19,18 +25,17 @@ async function search(req, res) {
 }
 
 async function addAlbum(req,res) {
-    const album = await Album.findOne({API_ID:req.body.API_ID})
-    console.log(album)
+    const album = await Album.findOne({API_ID:req.body.API_ID});
     if (album) {
-        let albumUser = album.user.includes(req.user._id)
+        let albumUser = album.user.includes(req.user._id);
         if (albumUser) return
-        album.user.push(req.user._id)
-        await album.save()
-        res.json(album)
+        album.user.push(req.user._id);
+        await album.save();
+        res.json(album);
     } else {
         req.body.user = req.user._id
-        const newAlbum = new Album(req.body)
-        await newAlbum.save()
-        res.json(newAlbum)
+        const newAlbum = new Album(req.body);
+        await newAlbum.save();
+        res.json(newAlbum);
     }
 }

@@ -1,10 +1,21 @@
-import { useParams } from "react-router-dom";
+// import { useState } from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import * as albumsAPI from '../../utilities/albums-api';
 import './AlbumDetailsPage.css';
 
-export default function AlbumDetailsPage({collection}) {
+
+export default function AlbumDetailsPage({collection, setCollection}) {
     const {id} = useParams();
     const album = collection.find(a => a._id === id);
-    // console.log(collection)
+    const navigate = useNavigate();
+    
+    async function deleteAlbum() {
+        const removed = await albumsAPI.deleteAlbum(album._id);
+        const updatedCollection = collection.filter(album => album._id !== removed._id)
+        setCollection(updatedCollection);
+        navigate('/collection');
+    }
+
     return (
         <>
         <div className="detailDiv">
@@ -20,7 +31,7 @@ export default function AlbumDetailsPage({collection}) {
             <p className="label">Genre(s):</p>
             <p>{album.genre}</p>
             <br />
-            <button>Remove from collection</button>
+            <button onClick={deleteAlbum}>Remove from collection</button>
             </div>
         </div>
         <br />

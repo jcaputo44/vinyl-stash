@@ -8,5 +8,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.post('/', albumsCtrl.search);
 router.post('/add', albumsCtrl.addAlbum);
 router.get('/', albumsCtrl.getCollection);
+router.delete('/:id', albumsCtrl.deleteAlbum);
 
 module.exports = router;
