@@ -1,11 +1,9 @@
-/* .mainAddDiv {
-    margin: 2rem;
-    border: 2px solid;
-    height: 100%;
-    border-radius: 15px;
-    padding: 15px;
-} */
 
 .page-title {
     font-family: 'Amaranth', sans-serif;
+}
+
+.searchBar {
+    margin-right: 3rem;
+    
 }

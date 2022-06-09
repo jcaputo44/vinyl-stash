@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    margin-left: 2rem;
     float: left;
     width: 50%;
 }
@@ -18,4 +19,12 @@
 
 .label {
     font-weight: bold;
+}
+
+.comm-sect {
+    margin-top: 8rem;
+}
+
+.add-comm-butt {
+    margin-top: 1rem;
 }

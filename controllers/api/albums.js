@@ -6,17 +6,23 @@ module.exports = {
     search,
     addAlbum,
     getCollection,
-    deleteAlbum
+    deleteAlbum,
+    addComment
+}
+
+async function addComment(req, res) {
+    const newComment = await Album.findOne(req.params.id)
+    res.json(newComment)
 }
 
 async function deleteAlbum(req, res) {
     const remove = await Album.findByIdAndDelete(req.params.id);
-    res.json(remove)
+    res.json(remove);
 }
 
 async function getCollection(req, res) {
     const albums = await Album.find({user:req.user._id}).sort("-createdAt");
-    res.json(albums)
+    res.json(albums);
 }
 
 async function search(req, res) {
@@ -33,7 +39,7 @@ async function addAlbum(req,res) {
         await album.save();
         res.json(album);
     } else {
-        req.body.user = req.user._id
+        req.body.user = req.user._id;
         const newAlbum = new Album(req.body);
         await newAlbum.save();
         res.json(newAlbum);

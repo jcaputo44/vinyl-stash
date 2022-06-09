@@ -16,12 +16,11 @@ function App() {
   const navigate = useNavigate();
 
   async function addTo(albumObj) {
-    const album = await albumsAPI.addAlbum(albumObj)
-    setCollection([...collection, album]);
+    const album = await albumsAPI.addAlbum(albumObj);
+    setCollection([album, ...collection]);
     navigate('/collection');
   } 
 
-    // console.log(collection)
   useEffect(function() {
     async function showCollection() {
       const newCollection = await albumsAPI.getCollection();

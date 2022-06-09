@@ -16,3 +16,7 @@ export function getCollection(collection) {
 export function deleteAlbum(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
+
+export function addComment(id) {
+  return sendRequest(`${BASE_URL}/comments`)
+}

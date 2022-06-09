@@ -25,10 +25,12 @@ export default function AddAlbumPage({addTo, albums, setAlbums}) {
   return (
     <>
     <h1 className="page-title">Add Album</h1>
-      <input type="text" value={query} onChange={(evt) => setQuery(evt.target.value) } /><button onClick={searchAlbums} >search</button>
+    <div className="searchBar">
+      <input type="text" value={query} onChange={(evt) => setQuery(evt.target.value) } />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onClick={searchAlbums} >search</button>
+    </div>
     <div className="mainAddDiv">
       <br />
-      <div>showing results for: {query}</div>
+      {/* <div>{setQuery ? 'showing results for:' : ''}</div> */}
       <br />
       <div>{searchedAlbums}</div>
     </div>

@@ -11,9 +11,14 @@ export default function AlbumDetailsPage({collection, setCollection}) {
     
     async function deleteAlbum() {
         const removed = await albumsAPI.deleteAlbum(album._id);
-        const updatedCollection = collection.filter(album => album._id !== removed._id)
+        const updatedCollection = collection.filter(album => album._id !== removed._id);
         setCollection(updatedCollection);
         navigate('/collection');
+    }
+
+    async function addComm() {
+        const comment = await albumsAPI.addComment(album._id);
+        console.log(comment);
     }
 
     return (
@@ -33,6 +38,12 @@ export default function AlbumDetailsPage({collection, setCollection}) {
             <br />
             <button onClick={deleteAlbum}>Remove from collection</button>
             </div>
+            <br />
+            <div className="comm-sect">
+                <p className="label">Comments</p>
+                <textarea className="form-container" type="text" rows="4" cols="50" />
+            </div>
+                <button onClick={addComm} className="add-comm-butt" >Add Comment</button>
         </div>
         <br />
         <br />
