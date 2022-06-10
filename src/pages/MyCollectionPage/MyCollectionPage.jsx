@@ -8,7 +8,6 @@ export default function MyCollectionPage({collection}) {
     <>
     <h1 className="page-title">My Collection</h1>
     <div>
-      <br />
       <div className="ColGrid">{collectionList}</div>
     </div>
     <br />

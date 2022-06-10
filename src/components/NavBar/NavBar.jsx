@@ -15,13 +15,13 @@ export default function NavBar({ user, setUser }) {
     <nav className="nav-bar">
       <img className="VSL" src="https://i.imgur.com/7nG0VSX.png" alt="VSL" />
       &nbsp; &nbsp;
-      <Link to="/collection">My Collection</Link>
+      <Link to="/collection" className="nav-butt">My Collection</Link>
       &nbsp; | &nbsp;
-      <Link to="/collection/add">Add Album</Link>
+      <Link to="/collection/add" className="nav-butt">Add Albums</Link>
       &nbsp; | &nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp; | &nbsp;
-      <Link to="" onClick={handleLogOut}>Log Out</Link>
+      <Link to="" onClick={handleLogOut} className="nav-butt">Log Out</Link>
     </nav>
   );
 }
