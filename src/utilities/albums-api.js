@@ -17,6 +17,6 @@ export function deleteAlbum(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
 
-export function addComment(id) {
-  return sendRequest(`${BASE_URL}/comments`)
+export function addComment(comment, id) {
+  return sendRequest(`${BASE_URL}/${id}/comments`, 'POST', {comment})
 }

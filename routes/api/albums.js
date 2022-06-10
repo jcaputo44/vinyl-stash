@@ -9,5 +9,6 @@ router.post('/', albumsCtrl.search);
 router.post('/add', albumsCtrl.addAlbum);
 router.get('/', albumsCtrl.getCollection);
 router.delete('/:id', albumsCtrl.deleteAlbum);
+router.post('/:id/comments', albumsCtrl.addComment);
 
 module.exports = router;
