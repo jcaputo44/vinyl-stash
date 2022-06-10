@@ -11,13 +11,11 @@ module.exports = {
 }
 
 async function addComment(req, res) {
-    console.log('hitting');
     const album = await Album.findById(req.params.id);
     req.body.user = req.user._id;
     album.comments.push(req.body);
     await album.save();
     res.json(album);
-    console.log(album);
 }
 
 async function deleteAlbum(req, res) {

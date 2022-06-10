@@ -8,8 +8,9 @@ export default function AlbumDetailsPage({collection, setCollection}) {
     const {id} = useParams();
     const album = collection.find(a => a._id === id);
     const navigate = useNavigate();
-    const [comments, setComments] = useState({});
+    // const [comments, setComments] = useState({});
     const [commentBox, setCommentBox] = useState('');
+    if (!album) return null;
     
     async function deleteAlbum() {
         const removed = await albumsAPI.deleteAlbum(album._id);
@@ -19,10 +20,10 @@ export default function AlbumDetailsPage({collection, setCollection}) {
     }
     
     async function addComm() {
-        const comment = await albumsAPI.addComment(commentBox, album._id);
-        // setCommentBox('');
-        setComments([...album.comments, comment]);
-        console.log(comment);
+        const updatedAlbum = await albumsAPI.addComment(commentBox, album._id);
+        const newCollection = collection.map((a) => a._id === updatedAlbum._id ? updatedAlbum : a);
+        setCollection(newCollection);
+        setCommentBox('');
     }
 
     return (
@@ -44,11 +45,11 @@ export default function AlbumDetailsPage({collection, setCollection}) {
             </div>
             <br />
             <div className="comm-sect">
-                <p className="label">Notes</p>
+                <p className="label">Notes:</p>
                 <div>
                 {album.comments.map((c, idx) => <p key={idx}>{c.comment}</p>)}
                 </div>
-                <textarea onChange={(evt) => setCommentBox(evt.target.value)} className="form-container" type="text" rows="4" cols="50" />
+                <textarea value={commentBox} onChange={(evt) => setCommentBox(evt.target.value)} className="form-container" type="text" rows="4" cols="50" />
             </div>
                 <button onClick={addComm} className="add-comm-butt" >Add Note</button>
         </div>
