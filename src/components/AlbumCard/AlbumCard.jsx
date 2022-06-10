@@ -1,6 +1,6 @@
 // import searchedAlbums from '../../pages/AddAlbumPage/AddAlbumPage';
 // import { useState } from 'react';
-// import './AlbumCard.css'
+import './AlbumCard.css'
 
 export default function AlbumCard({album, addTo}) {
     function addAlbum(album) {
@@ -19,10 +19,12 @@ export default function AlbumCard({album, addTo}) {
 
     return(
         <div className="card-div">
-            <img key={album.title} src={album.cover_image} alt="oops"></img>
+            <img key={album.title} src={album.cover_image} alt="oops" height="250px"></img>
             <br />
+            <br />
+            <div className="searchTitle">
             {album.title}
-            <br />
+            </div>
             <br />
             <button onClick={() => addAlbum(album)}>Add to Collection</button>
             <br />

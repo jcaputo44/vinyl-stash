@@ -11,8 +11,7 @@
     border-radius: 15px;
     border-color: rgb(105, 51, 44);
     padding: 20px;
-    /* grid-template-columns: 32vmin 32vmin 32vmin 32vmin 32vmin;
-    grid-template-rows:  32vmin 32vmin 32vmin 32vmin 32vmin; */
+    background-color: rgb(240, 240, 240);
 }
 
 

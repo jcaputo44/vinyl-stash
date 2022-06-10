@@ -8,7 +8,6 @@ export default function AlbumDetailsPage({collection, setCollection}) {
     const {id} = useParams();
     const album = collection.find(a => a._id === id);
     const navigate = useNavigate();
-    // const [comments, setComments] = useState({});
     const [commentBox, setCommentBox] = useState('');
     if (!album) return null;
     
