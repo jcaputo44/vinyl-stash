@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import CollCard from '../../components/CollCard/CollCard';
 import './MyCollectionPage.css';
 

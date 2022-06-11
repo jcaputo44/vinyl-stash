@@ -26,8 +26,12 @@ function App() {
       const newCollection = await albumsAPI.getCollection();
       setCollection(newCollection);
     }
-    showCollection();
-  },[]); 
+    if (user) {
+      showCollection();
+    } else {
+      setCollection([]);
+    }
+  }, [user]);
 
   return (
     <main className="App">
