@@ -10,14 +10,9 @@
 
 .nav-butt {
     color: rgb(98, 45, 40);
-    /* border: 2px solid; */
-    /* padding: 5px;
-    border-radius: 5px;
-    background-color: rgb(255, 170, 248); */
     text-decoration: none;
 }
 
 .nav-butt:active {
     text-decoration: underline;
-    /* color: rgb(255, 184, 249); */
   }
