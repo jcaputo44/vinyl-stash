@@ -35,7 +35,6 @@ function App() {
           <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              {/* Route components in here */}
               <Route path="/collection/add" element={<AddAlbumPage addTo={addTo} albums={albums} setAlbums={setAlbums}/>} />
               <Route path="/collection" element={<MyCollectionPage collection={collection} />} />
               <Route path="/collection/details/:id" element={<AlbumDetailsPage collection={collection} setCollection={setCollection}/>} />
