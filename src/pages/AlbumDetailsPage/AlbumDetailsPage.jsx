@@ -46,8 +46,9 @@ export default function AlbumDetailsPage({collection, setCollection}) {
             <div className="comm-sect">
                 <p className="label">Notes:</p>
                 <div>
-                {album.comments.map((c, idx) => <p key={idx}>{c.comment}</p>)}
+                {album.comments.map((c, idx) => <p className="notes" key={idx}>{c.comment}</p>)}
                 </div>
+                <br />
                 <textarea value={commentBox} onChange={(evt) => setCommentBox(evt.target.value)} className="form-container" type="text" rows="4" cols="50" />
             </div>
                 <button onClick={addComm} className="add-comm-butt" >Add Note</button>

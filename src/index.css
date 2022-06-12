@@ -150,3 +150,7 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+button:hover {
+  background-color: rgb(110, 74, 71);
+}
