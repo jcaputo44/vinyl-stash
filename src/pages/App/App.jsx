@@ -19,9 +19,9 @@ function App() {
     const album = await albumsAPI.addAlbum(albumObj);
     setCollection([album, ...collection]);
     navigate('/collection');
-  } 
+  }
 
-  useEffect(function() {
+  useEffect(function () {
     async function showCollection() {
       const newCollection = await albumsAPI.getCollection();
       setCollection(newCollection);
@@ -35,19 +35,19 @@ function App() {
 
   return (
     <main className="App">
-        { user ?
-          <>
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              <Route path="/collection/add" element={<AddAlbumPage addTo={addTo} albums={albums} setAlbums={setAlbums}/>} />
-              <Route path="/collection" element={<MyCollectionPage collection={collection} />} />
-              <Route path="/collection/details/:id" element={<AlbumDetailsPage collection={collection} setCollection={setCollection}/>} />
-              <Route path="/*" element={<Navigate to="/collection" /> } />
-            </Routes>
-          </>
-          :
-          <AuthPage setUser={setUser} />
-        }
+      {user ?
+        <>
+          <NavBar user={user} setUser={setUser} />
+          <Routes>
+            <Route path="/collection/add" element={<AddAlbumPage addTo={addTo} albums={albums} setAlbums={setAlbums} />} />
+            <Route path="/collection" element={<MyCollectionPage collection={collection} />} />
+            <Route path="/collection/details/:id" element={<AlbumDetailsPage collection={collection} setCollection={setCollection} />} />
+            <Route path="/*" element={<Navigate to="/collection" />} />
+          </Routes>
+        </>
+        :
+        <AuthPage setUser={setUser} />
+      }
     </main>
   );
 }
