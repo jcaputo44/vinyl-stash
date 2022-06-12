@@ -10,14 +10,14 @@ export default function AuthPage({ setUser }) {
       <img src="https://i.imgur.com/HxPUVsp.png" alt="vinyl-stash" className="vslogo"/>
       {/* <h1 className="page-title">Vinyl Stash</h1> */}
       {/* <br /> */}
-        <div className="flex-ctr-ctr">
+        <div className="flex-ctr-ctr vauth-square">
         { showSignUp ?
-            <LoginForm setUser={setUser} />
-            :
             <SignUpForm setUser={setUser} />
+            :
+            <LoginForm setUser={setUser} />
           }
         </div>
-      <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Not A Mamber? Sign Up!' : 'Already A Member? Log In!'}</button>
+      <button className="sign-butt" onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Already A Member? Log In!' : 'Not A Mamber? Sign Up!'}</button>
     </main>
   );
 }

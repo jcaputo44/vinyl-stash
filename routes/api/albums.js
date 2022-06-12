@@ -5,10 +5,10 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 
 // POST /api/users/login
-router.post('/', albumsCtrl.search);
-router.post('/add', albumsCtrl.addAlbum);
-router.get('/', albumsCtrl.getCollection);
-router.delete('/:id', albumsCtrl.deleteAlbum);
-router.post('/:id/comments', albumsCtrl.addComment);
+router.post('/', ensureLoggedIn, albumsCtrl.search);
+router.post('/add', ensureLoggedIn, albumsCtrl.addAlbum);
+router.get('/', ensureLoggedIn, albumsCtrl.getCollection);
+router.delete('/:id', ensureLoggedIn, albumsCtrl.deleteAlbum);
+router.post('/:id/comments', ensureLoggedIn, albumsCtrl.addComment);
 
 module.exports = router;

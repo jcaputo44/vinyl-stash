@@ -6,8 +6,8 @@ export default function MyCollectionPage({collection}) {
   return (
     <>
     <h1 className="page-title">My Collection</h1>
-    <div>
-      <div className="ColGrid">{collectionList}</div>
+    <div className={collection.length > 0 ? "ColGrid" : ""}>
+    {(collection.length > 0 ? collectionList : <p>Add albums to start your collection!</p>)}
     </div>
     <br />
     <br />
