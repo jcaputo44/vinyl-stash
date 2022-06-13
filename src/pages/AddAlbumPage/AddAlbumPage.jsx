@@ -35,7 +35,9 @@ export default function AddAlbumPage({ addTo, albums, setAlbums }) {
       <div className="mainAddDiv">
         <br />
         <br />
-        <div className="searchGrid">{searchedAlbums}</div>
+        <div className={albums.length > 0 ? "searchGrid" : ""}>
+          {(albums.length > 0 ? searchedAlbums : "No results found, try again!")}
+          </div>
       </div>
       <br />
     </>
