@@ -1,5 +1,7 @@
-.page-title {
+.page-title-add {
     font-family: 'Amaranth', sans-serif;
+    color: rgb(105, 51, 44);
+    font-size: 3rem;
 }
 
 .searchBar {

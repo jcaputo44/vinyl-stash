@@ -17,7 +17,7 @@
 .page-title {
     font-family: 'Amaranth', sans-serif;
     color: rgb(105, 51, 44);
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .alb-cov:hover {
@@ -27,6 +27,7 @@
 .rec {
     margin-top: -.2rem;
     border-radius: 50%;
+    opacity: .9;
 }
 
 .rec:hover {

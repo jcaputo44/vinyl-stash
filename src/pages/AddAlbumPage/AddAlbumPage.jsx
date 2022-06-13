@@ -28,7 +28,7 @@ export default function AddAlbumPage({ addTo, albums, setAlbums }) {
 
   return (
     <>
-      <h1 className="page-title">Search Albums</h1>
+      <h1 className="page-title-add">Add Albums</h1>
       <div className="searchBar">
         <input type="text" value={query} onChange={(evt) => setQuery(evt.target.value)} />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onClick={searchAlbums} >search</button>
       </div>

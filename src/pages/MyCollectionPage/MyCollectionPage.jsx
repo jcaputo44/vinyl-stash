@@ -10,7 +10,7 @@ export default function MyCollectionPage({ collection }) {
       <div className={collection.length > 0 ? "ColGrid" : ""}>
         {(collection.length > 0 ? collectionList
           :
-          <Link to="/collection/add"><img className="rec" src="https://i.imgur.com/8MEVBuT.png" alt="oops" height="380px"></img></Link>)}
+          <Link to="/collection/add"><img className="rec" src="https://i.imgur.com/8MEVBuT.png" alt="oops" height="350px"></img></Link>)}
         </div>
       <br />
       <br />
