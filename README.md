@@ -5,7 +5,7 @@
 </div>
 
 <h1>:pencil: Description</h1>
-<p>Vinyl Stash is the Beta version of an app that allows users to catalog their personal record collection. By consuming Discgos's public API, users are able to search through a massive database of music information and find digital representations of the albums they own. Once the user saves an album to their collection, they are able to leave personal notes for themselves about the album, their expirience gathering or listening to the album, and anything else they deem worthy of documentation. </p>
+<p>Vinyl Stash is the Beta version of an app that allows users to catalog their personal record collection. By consuming Discogs' public API, users are able to search through a massive database of music information and find digital representations of the albums they own. Once the user saves an album to their collection, they are able to leave personal notes for themselves about the album, their expirience gathering or listening to the album, and anything else they deem worthy of documentation. </p>
 
 <details>
 <summary> :bar_chart: ERD</summary>
