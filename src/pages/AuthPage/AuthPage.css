@@ -8,5 +8,6 @@
 }
 
 button {
+    margin-top: inherit;
     margin: -3rem;
 }
