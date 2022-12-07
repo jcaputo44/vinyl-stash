@@ -1,6 +1,6 @@
 <div align="center">
    <h1>:notes: :headphones: Vinyl Stash :headphones: :notes: </h1>
-   <h3>https://vinyl-stash.herokuapp.com/</h3>
+   <h3>https://vinyl-stash.up.railway.app/</h3>
    <h5>Joseph Caputo</h5>                             
 </div>
 
@@ -77,7 +77,7 @@
 
 <details open>   
 <summary>Deployed Link (Heroku)</summary>
-<a href="https://vinyl-stash.herokuapp.com/">Vinyl-Stash</a>
+<a href="https://vinyl-stash.up.railway.app/">Vinyl-Stash</a>
 </details>
 
 ## :fast_forward: Next Steps   
