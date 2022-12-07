@@ -76,7 +76,7 @@
 </details>
 
 <details open>   
-<summary>Deployed Link (Heroku)</summary>
+<summary>Deployed Link</summary>
 <a href="https://vinyl-stash.up.railway.app/">Vinyl-Stash</a>
 </details>
 
