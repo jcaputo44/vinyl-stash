@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jcaputo44.github.io/vinyl-stash/static/css/main.c4613461.css",
+    "main.js": "/jcaputo44.github.io/vinyl-stash/static/js/main.0a602829.js",
+    "index.html": "/jcaputo44.github.io/vinyl-stash/index.html",
+    "main.c4613461.css.map": "/jcaputo44.github.io/vinyl-stash/static/css/main.c4613461.css.map",
+    "main.0a602829.js.map": "/jcaputo44.github.io/vinyl-stash/static/js/main.0a602829.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4613461.css",
+    "static/js/main.0a602829.js"
+  ]
+}
