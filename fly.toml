@@ -6,7 +6,7 @@ kill_timeout = 5
 processes = []
 
 [env]
-  
+  DATABASE_URL=mongodb+srv://jcaputo44:Turtle44@cluster0.d5olw.mongodb.net/vinyl-stash?retryWrites=true&w=majority
 
 [experimental]
   auto_rollback = true
